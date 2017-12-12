@@ -1,0 +1,8 @@
+build/
+.tags
+.tags_sorted_by_file
+.mxproject
+mx.scratch
+Ozone_Debug.jdebug
+Ozone_Debug.jdebug.user
+STM32L4_EVAL.ioc
