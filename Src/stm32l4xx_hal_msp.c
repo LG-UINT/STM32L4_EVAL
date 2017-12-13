@@ -96,7 +96,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* huart)
 {
 
   #ifdef config_UART_PRINTF
-  if(huart->Instance==UART_PRINT)
+  if( huart->Instance == UART_PRINT)
     vUartPrintfMspInit();
   #endif
 
@@ -106,7 +106,7 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* huart)
 {
 
   #ifdef config_UART_PRINTF
-  if(huart->Instance==UART_PRINT)
+  if( huart->Instance == UART_PRINT)
     vUartPrintfDeMspInit();
   #endif
 

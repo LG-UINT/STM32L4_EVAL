@@ -52,6 +52,12 @@
 extern "C" {
 #endif
 
+#include "stm32l4xx_hal.h"
+
+#define LED_RED_TOGGLE    HAL_GPIO_TogglePin( GPIOC, GPIO_PIN_1)
+#define LED_GREEN_TOGGLE  HAL_GPIO_TogglePin( GPIOB, GPIO_PIN_2)
+
+void vPeripherialInit( void );
 
 
 #endif /* __PERIPHERAL_H */

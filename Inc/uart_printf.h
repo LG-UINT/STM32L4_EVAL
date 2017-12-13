@@ -49,7 +49,11 @@
 #define __UART_PRINTF_H
 
 
-  #define UART_PRINT            LPUART1
+#include <stdio.h>
+
+#define VDDIO2                1
+#define UART_PRINT            LPUART1
+
 
 #ifdef __cplusplus
 extern "C" {

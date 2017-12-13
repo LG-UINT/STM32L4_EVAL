@@ -210,6 +210,17 @@ $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf | $(BUILD_DIR)
 	
 $(BUILD_DIR):
 	mkdir $@
+
+######################################
+# Flash Parameter
+######################################
+
+flash: $(BUILD_DIR)/$(TARGET).bin
+	@echo "h" > jlink.jlink
+	@echo "loadbin" $< "0x08000000" >> jlink.jlink
+	@echo "g" >> jlink.jlink
+	@echo "qc" >> jlink.jlink
+	JLink.exe -device STM32L476ZG -Speed 4000 -IF SWD -JTAGConf -1,-1 -CommanderScript jlink.jlink
 	
 #######################################
 # clean up

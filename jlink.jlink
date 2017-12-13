@@ -1,0 +1,4 @@
+h
+loadbin build/STM32L4_EVAL.bin 0x08000000
+g
+qc
