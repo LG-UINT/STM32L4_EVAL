@@ -143,14 +143,14 @@ AS_INCLUDES =  \
 
 # C includes
 C_INCLUDES =  \
--IInc \
--IDrivers/STM32L4xx_HAL_Driver/Inc \
--IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy \
--IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 -IDrivers/CMSIS/Device/ST/STM32L4xx/Include \
--IMiddlewares/Third_Party/FreeRTOS/Source/include \
+-IDrivers/CMSIS/Include \
+-IDrivers/STM32L4xx_HAL_Driver/Inc/Legacy \
+-IDrivers/STM32L4xx_HAL_Driver/Inc \
+-IMiddlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 -IMiddlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS \
--IDrivers/CMSIS/Include
+-IMiddlewares/Third_Party/FreeRTOS/Source/include \
+-IInc \
 
 
 # compile gcc flags

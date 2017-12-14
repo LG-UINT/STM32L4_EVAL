@@ -57,6 +57,14 @@ extern "C" {
 #define LED_RED_TOGGLE    HAL_GPIO_TogglePin( GPIOC, GPIO_PIN_1)
 #define LED_GREEN_TOGGLE  HAL_GPIO_TogglePin( GPIOB, GPIO_PIN_2)
 
+
+#define WK_UP_BUTTON                GPIO_PIN_13
+#define WK_UP_BUTTON_PORT           GPIOC
+#define WK_UP_BUTTON_PRESS          GPIO_PIN_SET
+#define WK_UP_BUTTON_RELEASE        GPIO_PIN_RESET
+#define WK_UP_BUTTON_DETECT()       HAL_GPIO_ReadPin( WK_UP_BUTTON_PORT, WK_UP_BUTTON)
+
+
 void vPeripherialInit( void );
 
 

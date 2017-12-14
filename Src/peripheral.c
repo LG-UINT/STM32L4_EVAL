@@ -51,8 +51,6 @@
 /**
  *  Wake up button Macros
  */
-#define WK_UP_BUTTON                GPIO_PIN_13
-#define WK_UP_BUTTON_PORT           GPIOC
 #define WK_UP_BUTTON_MODE           GPIO_MODE_INPUT
 #define WK_UP_BUTTON_CLK_ENABLE()   __HAL_RCC_GPIOC_CLK_ENABLE()
 
@@ -162,40 +160,40 @@ void vSystemClock_Config(void)
 static void vWkUpButtonInit( void )
 {
 
-    GPIO_InitTypeDef GPIO_InitStruct;
+  GPIO_InitTypeDef GPIO_InitStruct;
 
-    WK_UP_BUTTON_CLK_ENABLE();
+  WK_UP_BUTTON_CLK_ENABLE();
 
-    GPIO_InitStruct.Pin  = WK_UP_BUTTON;
-    GPIO_InitStruct.Mode = WK_UP_BUTTON_MODE;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pin  = WK_UP_BUTTON;
+  GPIO_InitStruct.Mode = WK_UP_BUTTON_MODE;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
 
-    HAL_GPIO_Init( WK_UP_BUTTON_PORT, &GPIO_InitStruct);
+  HAL_GPIO_Init( WK_UP_BUTTON_PORT, &GPIO_InitStruct);
 
 }
 
 static void vLedInit( void )
 {
 
-    GPIO_InitTypeDef GPIO_InitStruct;
+  GPIO_InitTypeDef GPIO_InitStruct;
 
-    LED_RED_CLK_ENABLE();
+  LED_RED_CLK_ENABLE();
 
-    /*Configure GPIO pin : PC1 */
-    GPIO_InitStruct.Pin   = LED_RED_PIN;
-    GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull  = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init( LED_RED_PORT, &GPIO_InitStruct);
+  /*Configure GPIO pin : PC1 */
+  GPIO_InitStruct.Pin   = LED_RED_PIN;
+  GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull  = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init( LED_RED_PORT, &GPIO_InitStruct);
 
-    LED_GREEN_CLK_ENABLE();
+  LED_GREEN_CLK_ENABLE();
 
-    /*Configure GPIO pin : PB2 */
-    GPIO_InitStruct.Pin = LED_GREEN_PIN;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init( LED_GREEN_PORT, &GPIO_InitStruct);
+  /*Configure GPIO pin : PB2 */
+  GPIO_InitStruct.Pin = LED_GREEN_PIN;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init( LED_GREEN_PORT, &GPIO_InitStruct);
 
 }
 
